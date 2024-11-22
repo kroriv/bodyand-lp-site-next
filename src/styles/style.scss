@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//==============================================================================================
+//
+//  SUPPORTS
+//
+//==============================================================================================
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+  body {
+    min-height: 100vh;
+    height: -webkit-fill-available;
+  }
+}
+
+//==============================================================================================
+//
+//  WEBKIT
+//
+//==============================================================================================
+// safari 文字落ちバグ
+_::-webkit-full-page-media, _:future, :root body {
+  font-feature-settings: "palt";
+}
+
+//==============================================================================================
+//
+//  ANY
+//
+//==============================================================================================
+* {
+  @apply m-0 p-0;
+}
+*,*:before,*:after {
+  @apply box-border;
+}
+
+//==============================================================================================
+//
+//  INITIALIZE
+//
+//==============================================================================================
+
+html {
+  word-break:normal;
+  tab-size:4;
+  text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;
+  -moz-text-size-adjust:100%;
+  text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+body {
+  @apply relative text-15ptr md:text-26ptr text-[#3d3d3d] tracking-wide;
+  font-feature-settings:"palt";
+}
+
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, ins, kbd, label, legend, li, main, mark, menu, nav, object, ol, p, pre, q, samp, section, select, small, span, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, ul, var, video {
+  //@apply transition-[.01s_cubic-bezier(.1,.1,0,1)];
+}
+
+p {
+  @apply leading-none text-justify;
+}
+
+input, select {
+  -webkit-appearance: none;
+  appearance: none;
+}
